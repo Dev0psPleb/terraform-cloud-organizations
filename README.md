@@ -11,7 +11,9 @@ No providers.
 
 ## Modules
 
-No modules.
+| Name | Source | Version |
+|------|--------|---------|
+| <a name="module_organization"></a> [organization](#module\_organization) | BrynardSecurity-terraform/terraform-cloud/tfe | 0.0.3 |
 
 ## Resources
 
@@ -19,7 +21,9 @@ No resources.
 
 ## Inputs
 
-No inputs.
+| Name | Description | Type | Default | Required |
+|------|-------------|------|---------|:--------:|
+| <a name="input_organization"></a> [organization](#input\_organization) | Mapped variables for Terraform Cloud Organizations | <pre>map(object({<br>    organization_name   = string<br>    admin_email         = string<br>    create_organization = bool<br>  }))</pre> | n/a | yes |
 
 ## Outputs
 
