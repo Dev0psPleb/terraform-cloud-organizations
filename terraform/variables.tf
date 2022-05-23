@@ -57,6 +57,7 @@ variable "variable" {
     hcl             = bool
     workspace_id    = string
   }))
+  default = {}
 }
 
 variable "workspace" {
@@ -89,4 +90,5 @@ variable "workspace" {
     working_directory             = string
     workspace_variable            = bool
   }))
+  default = {}
 }
