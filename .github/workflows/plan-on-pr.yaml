@@ -17,3 +17,52 @@ jobs:
 
       - name: Run terraform fmt check
         run: terraform fmt -check -diff -recursive ./terraform
+
+  plan:
+    name: Plan
+    environment:
+      name: development
+      url: https://github.com
+    env:
+      TF_VAR_admin_email: ${{ secrets.ADMIN_EMAIL }}
+      TF_VAR_organization_name: ${{ secrets.ORGANIZATION_NAME }}
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        path:
+          - terraform
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Setup Terraform
+        uses: hashicorp/setup-terraform@v1
+        with:
+          cli_config_credentials_token: ${{ secrets.TF_API_TOKEN }}
+
+      - name: Initialize Terraform
+        run: |
+          cd ${{ matrix.path }}
+          terraform init -input=false
+
+      - name: Plan Terraform
+        id: plan
+        continue-on-error: true
+        run: |
+          cd ${{ matrix.path }}
+          terraform plan -input=false -no-color
+
+      - name: Post Plan to GitHub PR
+        uses: mshick/add-pr-comment@v1
+        with:
+          allow-repeats: true
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          repo-token-user-login: 'github-actions[bot]'
+          message: |
+            ## ${{ matrix.path }} plan
+            ```
+            ${{ steps.plan.outputs.stdout || steps.plan.outputs.stderr }}
+            ```
+
