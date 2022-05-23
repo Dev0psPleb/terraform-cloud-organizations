@@ -24,5 +24,5 @@ module "oauth_client" {
 }
 
 output "oauth_client_id" {
-  value = module.oauth_client.id
+  value = module.oauth_client.oauth_token_id
 }
