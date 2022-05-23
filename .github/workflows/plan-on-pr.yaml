@@ -1,0 +1,19 @@
+name: Plan / Test on PR
+
+on:
+  pull_request:
+    branches: [main]
+
+jobs:
+  lint:
+    name: Lint
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Setup Terraform
+        uses: hashicorp/setup-terraform@v1
+
+      - name: Run terraform fmt check
+        run: terraform fmt -check -diff -recursive ./terraform
