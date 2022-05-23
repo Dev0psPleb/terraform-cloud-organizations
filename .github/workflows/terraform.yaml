@@ -32,5 +32,8 @@ jobs:
         run: terraform init
 
       - id: plan
-        run: |
-          terraform plan -var admin_email=${{ secrets.ADMIN_EMAIL }} -var organization_name=${{secrets.ORGANIZATION_NAME}} -var create_organization=true
+        run: terraform plan -no-color
+
+      - run: echo ${{ steps.plan.outputs.stdout }}
+      - run: echo ${{ steps.plan.outputs.stderr }}
+      - run: echo ${{ steps.plan.outputs.exitcode }}
