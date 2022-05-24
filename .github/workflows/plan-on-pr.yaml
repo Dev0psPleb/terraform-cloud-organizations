@@ -22,9 +22,7 @@ jobs:
   plan:
     name: Plan
     environment:
-      name:
-        development
-        production
+      name: production
       url: https://github.com
     env:
       TF_VAR_admin_email: ${{ secrets.ADMIN_EMAIL }}

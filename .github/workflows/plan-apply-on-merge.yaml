@@ -25,9 +25,7 @@ jobs:
   plan_and_apply:
     name: Plan and Apply
     environment:
-      name:
-        development
-        production
+      name: production
       url: https://github.com
     env:
       TF_VAR_admin_email: ${{ secrets.ADMIN_EMAIL }}
