@@ -1,3 +1,4 @@
+# plan-apply-on-merge.yaml
 name: Plan /Apply On Merge
 
 on:
