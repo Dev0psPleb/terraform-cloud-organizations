@@ -31,7 +31,7 @@ jobs:
       TF_VAR_admin_email: ${{ secrets.ADMIN_EMAIL }}
       TF_VAR_organization_name: ${{ secrets.ORGANIZATION_NAME }}
       TF_VAR_create_organization: true
-      TF_VAR_github_pat_token: ${{ secrets.GITHUB_TOKEN }}
+      TF_VAR_github_pat_token: ${{ secrets.PAT }}
       TF_VAR_terraform_api_token: ${{ secrets.TF_API_TOKEN }}
     runs-on: ubuntu-latest
     strategy:
@@ -65,7 +65,7 @@ jobs:
           TF_VAR_admin_email: ${{ secrets.ADMIN_EMAIL }}
           TF_VAR_organization_name: ${{ secrets.ORGANIZATION_NAME }}
           TF_VAR_create_organization: true
-          TF_VAR_github_pat_token: ${{ secrets.GITHUB_TOKEN }}
+          TF_VAR_github_pat_token: ${{ secrets.PAT }}
           TF_VAR_terraform_api_token: ${{ secrets.TF_API_TOKEN }}
 
       - name: Reformat Plan
