@@ -106,7 +106,7 @@ jobs:
             ```
       - name: Post Plan Failure
         if: steps.plan.outcome == 'failure'
-        uses: mschick/add-pr-comment@v1
+        uses: mshick/add-pr-comment@v1
         with:
           repo-token: ${{ secrets.GITHUB_TOKEN }}
           repo-token-user-login: 'github-actions[bot]'
@@ -117,7 +117,7 @@ jobs:
             ```
       - name: Post Apply Failure
         if: steps.apply.outcome == 'failure'
-        uses: mschick/add-pr-comment@v1
+        uses: mshick/add-pr-comment@v1
         with:
           repo-token: ${{ secrets.GITHUB_TOKEN }}
           repo-token-user-login: 'github-actions[bot]'
