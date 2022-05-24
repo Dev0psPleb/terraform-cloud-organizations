@@ -25,7 +25,9 @@ jobs:
   plan_and_apply:
     name: Plan and Apply
     environment:
-      name: development
+      name:
+        development
+        production
       url: https://github.com
     env:
       TF_VAR_admin_email: ${{ secrets.ADMIN_EMAIL }}
@@ -43,6 +45,42 @@ jobs:
     steps:
       - name: Check out code
         uses: actions/checkout@v2
+
+      - name: Write private.tfvars file
+        uses: DamianReeves/write-file-action@v1.0
+        with:
+          path: ${{ matrix.path }}
+          contents: |
+            workspace = {
+              sophos-xdr = {
+                add_vcs_repo                  = true
+                agent_pool_id                 = ""
+                allow_destroy_plan            = false
+                auto_apply                    = true
+                create_variable_set           = true
+                execution_mode                = "remote"
+                file_triggers_enabled         = false
+                global                        = true
+                global_remote_state           = true
+                name                          = "${{ secrets.ORGANIZATION_NAME }}"
+                oauth_token_id                = ""
+                organization                  = ""
+                queue_all_runs                = false
+                remote_state_consumer_ids     = ""
+                speculative_enabled           = false
+                structured_run_output_enabled = true
+                ssh_key_id                    = ""
+                terraform_version             = ""
+                tfe_token                     = ""
+                trigger_prefixes              = [""]
+                tags                          = ["${{ secrets.ORGANIZATION_NAME }}"]
+                vcs_branch                    = "main"
+                vcs_repository                = "${{ github.repository }}"
+                workspace_description         = "Backend remote state for ${{ secrets.ORGANIZATION_NAME }}"
+                working_directory             = "./terraform"
+                workspace_variable            = false
+              }
+            }
 
       - name: Setup Terraform
         uses: hashicorp/setup-terraform@v1
