@@ -82,7 +82,12 @@ jobs:
           repo-token-user-login: 'github-actions[bot]'
           message: |
             ## ${{ matrix.path }} plan
-            ```
-            ${{ steps.plan.outputs.stdout || steps.plan.outputs.stderr }}
+            ```diff
+            + Green
+            - Red
+            ! Orange
+            @@ Pink @@
+            #Gray
+            ${{ env.PLAN }}
             ```
 
