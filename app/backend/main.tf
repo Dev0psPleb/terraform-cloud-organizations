@@ -69,21 +69,21 @@ module "workspace" {
 }
 
 data "tfe_workspace_ids" "all" {
-  names = ["*"]
+  names        = ["*"]
   organization = module.organization.tfe_organization_id
 }
 
 module "variables" {
-  source                        = "BrynardSecurity-terraform/terraform-cloud/tfe//modules/tfe_variables"
-  version                       = "0.0.5"
-  depends_on                    = [module.workspace]
-  for_each                      = var.variables
-  create_variable               = each.value.create_variable
-  key                           = each.value.key
-  value                         = each.value.value
-  description                   = each.value.description
-  category                      = each.value.category
-  sensitive                     = each.value.sensitive
-  hcl                           = each.value.hcl
-  workspace_id                  = each.value.workspace_id
+  source          = "BrynardSecurity-terraform/terraform-cloud/tfe//modules/tfe_variables"
+  version         = "0.0.5"
+  depends_on      = [module.workspace]
+  for_each        = var.variable
+  create_variable = each.value.create_variable
+  key             = each.value.key
+  value           = each.value.value
+  description     = each.value.description
+  category        = each.value.category
+  sensitive       = each.value.sensitive
+  hcl             = each.value.hcl
+  workspace_id    = each.value.workspace_id
 }

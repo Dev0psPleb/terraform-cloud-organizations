@@ -1,15 +1,15 @@
-# terraform-tfe-organization
+# backend
 
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 ## Requirements
 
-| Name | Version |
-|------|---------|
-| <a name="requirement_tfe"></a> [tfe](#requirement\_tfe) | ~> 0.30.2 |
+No requirements.
 
 ## Providers
 
-No providers.
+| Name | Version |
+|------|---------|
+| <a name="provider_tfe"></a> [tfe](#provider\_tfe) | 0.30.2 |
 
 ## Modules
 
@@ -17,10 +17,14 @@ No providers.
 |------|--------|---------|
 | <a name="module_oauth_client"></a> [oauth\_client](#module\_oauth\_client) | BrynardSecurity-terraform/terraform-cloud/tfe//modules/tfe_oauth_client | 0.0.5 |
 | <a name="module_organization"></a> [organization](#module\_organization) | BrynardSecurity-terraform/terraform-cloud/tfe | 0.0.5 |
+| <a name="module_variables"></a> [variables](#module\_variables) | BrynardSecurity-terraform/terraform-cloud/tfe//modules/tfe_variables | 0.0.5 |
+| <a name="module_workspace"></a> [workspace](#module\_workspace) | BrynardSecurity-terraform/terraform-cloud/tfe//modules/tfe_workspace | 0.0.5 |
 
 ## Resources
 
-No resources.
+| Name | Type |
+|------|------|
+| [tfe_workspace_ids.all](https://registry.terraform.io/providers/hashicorp/tfe/latest/docs/data-sources/workspace_ids) | data source |
 
 ## Inputs
 
@@ -41,7 +45,5 @@ No resources.
 
 | Name | Description |
 |------|-------------|
-| <a name="output_oauth_client_id"></a> [oauth\_client\_id](#output\_oauth\_client\_id) | n/a |
 | <a name="output_organization"></a> [organization](#output\_organization) | n/a |
-| <a name="output_organization_id"></a> [organization\_id](#output\_organization\_id) | n/a |
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->

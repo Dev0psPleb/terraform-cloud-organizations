@@ -1,11 +1,3 @@
-terraform {
-  required_providers {
-    tfe = {
-      version = "~> 0.30.2"
-    }
-  }
-}
-
 module "organization" {
   source  = "BrynardSecurity-terraform/terraform-cloud/tfe"
   version = "0.0.5"

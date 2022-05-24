@@ -1,11 +1,9 @@
-# terraform-tfe-organization
+# terraform
 
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 ## Requirements
 
-| Name | Version |
-|------|---------|
-| <a name="requirement_tfe"></a> [tfe](#requirement\_tfe) | ~> 0.30.2 |
+No requirements.
 
 ## Providers
 
@@ -34,8 +32,8 @@ No resources.
 | <a name="input_organization_name"></a> [organization\_name](#input\_organization\_name) | Name of the Terraform Cloud Organization to create | `string` | n/a | yes |
 | <a name="input_service_provider"></a> [service\_provider](#input\_service\_provider) | (Required) The VCS provider being connected with. Valid options are ado\_server, ado\_services, bitbucket\_hosted, bitbucket\_server, github, github\_enterprise, gitlab\_hosted, gitlab\_community\_edition, or gitlab\_enterprise\_edition. | `string` | `"github"` | no |
 | <a name="input_terraform_api_token"></a> [terraform\_api\_token](#input\_terraform\_api\_token) | Terraform Cloud API Token | `string` | n/a | yes |
-| <a name="input_variable"></a> [variable](#input\_variable) | Map of terraform variables | <pre>map(object({<br>    create_variable = bool<br>    key             = string<br>    value           = string<br>    description     = string<br>    category        = string<br>    sensitive       = bool<br>    hcl             = bool<br>    workspace_id    = string<br>  }))</pre> | n/a | yes |
-| <a name="input_workspace"></a> [workspace](#input\_workspace) | Mapped variables for Terraform Workspaces | <pre>map(object({<br>    add_vcs_repo                  = bool<br>    agent_pool_id                 = string<br>    allow_destroy_plan            = bool<br>    auto_apply                    = bool<br>    create_variable_set           = bool<br>    execution_mode                = string<br>    file_triggers_enabled         = bool<br>    global                        = bool<br>    global_remote_state           = bool<br>    name                          = string<br>    oauth_token_id                = string<br>    organization                  = string<br>    queue_all_runs                = bool<br>    remote_state_consumer_ids     = string<br>    speculative_enabled           = bool<br>    structured_run_output_enabled = bool<br>    ssh_key_id                    = string<br>    terraform_version             = string<br>    tfe_token                     = string<br>    trigger_prefixes              = list(string)<br>    tags                          = list(string)<br>    vcs_branch                    = string<br>    vcs_repository                = string<br>    workspace_description         = string<br>    working_directory             = string<br>    workspace_variable            = bool<br>  }))</pre> | n/a | yes |
+| <a name="input_variable"></a> [variable](#input\_variable) | Map of terraform variables | <pre>map(object({<br>    create_variable = bool<br>    key             = string<br>    value           = string<br>    description     = string<br>    category        = string<br>    sensitive       = bool<br>    hcl             = bool<br>    workspace_id    = string<br>  }))</pre> | `{}` | no |
+| <a name="input_workspace"></a> [workspace](#input\_workspace) | Mapped variables for Terraform Workspaces | <pre>map(object({<br>    add_vcs_repo                  = bool<br>    agent_pool_id                 = string<br>    allow_destroy_plan            = bool<br>    auto_apply                    = bool<br>    create_variable_set           = bool<br>    execution_mode                = string<br>    file_triggers_enabled         = bool<br>    global                        = bool<br>    global_remote_state           = bool<br>    name                          = string<br>    oauth_token_id                = string<br>    organization                  = string<br>    queue_all_runs                = bool<br>    remote_state_consumer_ids     = string<br>    speculative_enabled           = bool<br>    structured_run_output_enabled = bool<br>    ssh_key_id                    = string<br>    terraform_version             = string<br>    tfe_token                     = string<br>    trigger_prefixes              = list(string)<br>    tags                          = list(string)<br>    vcs_branch                    = string<br>    vcs_repository                = string<br>    workspace_description         = string<br>    working_directory             = string<br>    workspace_variable            = bool<br>  }))</pre> | `{}` | no |
 
 ## Outputs
 
