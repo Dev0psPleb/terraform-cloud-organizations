@@ -47,7 +47,7 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Write private.tfvars file
-        uses: DamianReeves/write-file-action
+        uses: DamianReeves/write-file-action@v1.0
         with:
           path: ${{ matrix.path }}
           contents: |
