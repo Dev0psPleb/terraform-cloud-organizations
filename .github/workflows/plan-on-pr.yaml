@@ -38,6 +38,21 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
+      - name: Write remote.tf file
+        uses: DamianReeves/write-file-action@v1.0
+        with:
+          path: ${{ matrix.path }}
+          contents: |
+            terraform {
+              cloud {
+                organization = "${{ secrets.ORGANIZATION_NAME }}"
+
+                workspaces {
+                  name = "${{ secrets.ORGANIZATION_NAME }}"
+                }
+              }
+            }
+
       - name: Write private.tfvars file
         uses: DamianReeves/write-file-action@v1.0
         with:

@@ -20,7 +20,7 @@ jobs:
           repo-token-user-login: 'github-actions[bot]'
           message: |
             ***Running terraform apply***
-            Results will display here monetarily...
+            Results will display here momentarily...
 
   plan_and_apply:
     name: Plan and Apply
@@ -43,6 +43,21 @@ jobs:
     steps:
       - name: Check out code
         uses: actions/checkout@v2
+
+      - name: Write remote.tf file
+        uses: DamianReeves/write-file-action@v1.0
+        with:
+          path: ${{ matrix.path }}
+          contents: |
+            terraform {
+              cloud {
+                organization = "${{ secrets.ORGANIZATION_NAME }}"
+
+                workspaces {
+                  name = "${{ secrets.ORGANIZATION_NAME }}"
+                }
+              }
+            }
 
       - name: Write private.tfvars file
         uses: DamianReeves/write-file-action@v1.0
