@@ -1,4 +1,5 @@
 # terraform-tfe-organization
+[![Plan /Apply On Merge](https://github.com/Dev0psPleb/terraform-cloud-organizations/actions/workflows/plan-apply-on-merge.yaml/badge.svg)](https://github.com/Dev0psPleb/terraform-cloud-organizations/actions/workflows/plan-apply-on-merge.yaml)
 
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 ## Requirements
