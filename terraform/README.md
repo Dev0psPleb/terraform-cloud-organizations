@@ -7,19 +7,25 @@ No requirements.
 
 ## Providers
 
-No providers.
+| Name | Version |
+|------|---------|
+| <a name="provider_tfe"></a> [tfe](#provider\_tfe) | 0.30.2 |
 
 ## Modules
 
 | Name | Source | Version |
 |------|--------|---------|
-| <a name="module_oauth_client"></a> [oauth\_client](#module\_oauth\_client) | BrynardSecurity-terraform/terraform-cloud/tfe//modules/tfe_oauth_client | 0.0.5 |
-| <a name="module_organization"></a> [organization](#module\_organization) | BrynardSecurity-terraform/terraform-cloud/tfe | 0.0.5 |
-| <a name="module_workspace"></a> [workspace](#module\_workspace) | BrynardSecurity-terraform/terraform-cloud/tfe//modules/tfe_workspace | 0.0.5 |
+| <a name="module_global_var_set"></a> [global\_var\_set](#module\_global\_var\_set) | BrynardSecurity-terraform/terraform-cloud/tfe//modules/tfe_variable_set | 0.0.9 |
+| <a name="module_oauth_client"></a> [oauth\_client](#module\_oauth\_client) | BrynardSecurity-terraform/terraform-cloud/tfe//modules/tfe_oauth_client | 0.0.9 |
+| <a name="module_organization"></a> [organization](#module\_organization) | BrynardSecurity-terraform/terraform-cloud/tfe | 0.0.9 |
+| <a name="module_workspace"></a> [workspace](#module\_workspace) | BrynardSecurity-terraform/terraform-cloud/tfe//modules/tfe_workspace | 0.0.9 |
+| <a name="module_workspace_var_set"></a> [workspace\_var\_set](#module\_workspace\_var\_set) | BrynardSecurity-terraform/terraform-cloud/tfe//module/tfe_variable_set | 0.0.9 |
 
 ## Resources
 
-No resources.
+| Name | Type |
+|------|------|
+| [tfe_workspace_ids.prod](https://registry.terraform.io/providers/hashicorp/tfe/latest/docs/data-sources/workspace_ids) | data source |
 
 ## Inputs
 
@@ -34,7 +40,8 @@ No resources.
 | <a name="input_service_provider"></a> [service\_provider](#input\_service\_provider) | (Required) The VCS provider being connected with. Valid options are ado\_server, ado\_services, bitbucket\_hosted, bitbucket\_server, github, github\_enterprise, gitlab\_hosted, gitlab\_community\_edition, or gitlab\_enterprise\_edition. | `string` | `"github"` | no |
 | <a name="input_terraform_api_token"></a> [terraform\_api\_token](#input\_terraform\_api\_token) | Terraform Cloud API Token | `string` | n/a | yes |
 | <a name="input_variable"></a> [variable](#input\_variable) | Map of terraform variables | <pre>map(object({<br>    create_variable = bool<br>    key             = string<br>    value           = string<br>    description     = string<br>    category        = string<br>    sensitive       = bool<br>    hcl             = bool<br>    workspace_id    = string<br>  }))</pre> | `{}` | no |
-| <a name="input_workspace"></a> [workspace](#input\_workspace) | Mapped variables for Terraform Workspaces | <pre>map(object({<br>    add_vcs_repo                  = bool<br>    agent_pool_id                 = string<br>    allow_destroy_plan            = bool<br>    auto_apply                    = bool<br>    create_variable_set           = bool<br>    execution_mode                = string<br>    file_triggers_enabled         = bool<br>    global                        = bool<br>    global_remote_state           = bool<br>    name                          = string<br>    oauth_token_id                = string<br>    organization                  = string<br>    queue_all_runs                = bool<br>    remote_state_consumer_ids     = string<br>    speculative_enabled           = bool<br>    structured_run_output_enabled = bool<br>    ssh_key_id                    = string<br>    terraform_version             = string<br>    tfe_token                     = string<br>    trigger_prefixes              = list(string)<br>    tags                          = list(string)<br>    vcs_branch                    = string<br>    vcs_repository                = string<br>    workspace_description         = string<br>    working_directory             = string<br>    workspace_variable            = bool<br>  }))</pre> | `{}` | no |
+| <a name="input_variable_set"></a> [variable\_set](#input\_variable\_set) | Map of variable sets | <pre>map(object({<br>    create_variable_set      = bool<br>    global                   = bool<br>    organization             = string<br>    variable_set_description = string<br>    variable_set_name        = string<br>    workspace_ids            = list(string)<br>  }))</pre> | n/a | yes |
+| <a name="input_workspace"></a> [workspace](#input\_workspace) | Mapped variables for Terraform Workspaces | <pre>map(object({<br>    add_vcs_repo                  = bool<br>    agent_pool_id                 = string<br>    allow_destroy_plan            = bool<br>    auto_apply                    = bool<br>    execution_mode                = string<br>    file_triggers_enabled         = bool<br>    global                        = bool<br>    global_remote_state           = bool<br>    name                          = string<br>    oauth_token_id                = string<br>    organization                  = string<br>    queue_all_runs                = bool<br>    remote_state_consumer_ids     = string<br>    speculative_enabled           = bool<br>    structured_run_output_enabled = bool<br>    ssh_key_id                    = string<br>    terraform_version             = string<br>    tfe_token                     = string<br>    trigger_prefixes              = list(string)<br>    tags                          = list(string)<br>    vcs_branch                    = string<br>    vcs_repository                = string<br>    workspace_description         = string<br>    working_directory             = string<br>    workspace_variable            = bool<br>  }))</pre> | `{}` | no |
 
 ## Outputs
 

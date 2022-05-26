@@ -45,6 +45,18 @@ variable "terraform_api_token" {
   sensitive   = true
 }
 
+variable "variable_set" {
+  description = "Map of variable sets"
+  type = map(object({
+    create_variable_set      = bool
+    global                   = bool
+    organization             = string
+    variable_set_description = string
+    variable_set_name        = string
+    workspace_ids            = list(string)
+  }))
+}
+
 variable "variable" {
   description = "Map of terraform variables"
   type = map(object({
@@ -67,7 +79,6 @@ variable "workspace" {
     agent_pool_id                 = string
     allow_destroy_plan            = bool
     auto_apply                    = bool
-    create_variable_set           = bool
     execution_mode                = string
     file_triggers_enabled         = bool
     global                        = bool

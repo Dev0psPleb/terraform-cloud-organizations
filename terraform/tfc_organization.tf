@@ -1,6 +1,6 @@
 module "organization" {
   source  = "BrynardSecurity-terraform/terraform-cloud/tfe"
-  version = "0.0.5"
+  version = "0.0.9"
   # insert the 2 required variables here
   admin_email         = var.admin_email
   name                = var.organization_name
@@ -13,7 +13,7 @@ output "organization_id" {
 
 module "oauth_client" {
   source                = "BrynardSecurity-terraform/terraform-cloud/tfe//modules/tfe_oauth_client"
-  version               = "0.0.5"
+  version               = "0.0.9"
   depends_on            = [module.organization]
   api_url               = var.api_url
   https_url             = var.https_url

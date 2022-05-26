@@ -6,14 +6,13 @@ locals {
 
 module "workspace" {
   source                        = "BrynardSecurity-terraform/terraform-cloud/tfe//modules/tfe_workspace"
-  version                       = "0.0.5"
+  version                       = "0.0.9"
   depends_on                    = [module.organization]
   for_each                      = var.workspace
   add_vcs_repo                  = each.value.add_vcs_repo
   agent_pool_id                 = each.value.agent_pool_id
   allow_destroy_plan            = each.value.allow_destroy_plan
   auto_apply                    = each.value.auto_apply
-  create_variable_set           = each.value.create_variable_set
   execution_mode                = each.value.execution_mode
   file_triggers_enabled         = each.value.file_triggers_enabled
   global                        = each.value.global
