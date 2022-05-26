@@ -19,13 +19,13 @@ No requirements.
 | <a name="module_oauth_client"></a> [oauth\_client](#module\_oauth\_client) | BrynardSecurity-terraform/terraform-cloud/tfe//modules/tfe_oauth_client | 0.0.9 |
 | <a name="module_organization"></a> [organization](#module\_organization) | BrynardSecurity-terraform/terraform-cloud/tfe | 0.0.9 |
 | <a name="module_workspace"></a> [workspace](#module\_workspace) | BrynardSecurity-terraform/terraform-cloud/tfe//modules/tfe_workspace | 0.0.9 |
-| <a name="module_workspace_var_set"></a> [workspace\_var\_set](#module\_workspace\_var\_set) | BrynardSecurity-terraform/terraform-cloud/tfe//module/tfe_variable_set | 0.0.9 |
+| <a name="module_workspace_var_set"></a> [workspace\_var\_set](#module\_workspace\_var\_set) | BrynardSecurity-terraform/terraform-cloud/tfe//modules/tfe_variable_set | 0.0.9 |
 
 ## Resources
 
 | Name | Type |
 |------|------|
-| [tfe_workspace_ids.prod](https://registry.terraform.io/providers/hashicorp/tfe/latest/docs/data-sources/workspace_ids) | data source |
+| [tfe_workspace_ids.all](https://registry.terraform.io/providers/hashicorp/tfe/latest/docs/data-sources/workspace_ids) | data source |
 
 ## Inputs
 
@@ -48,6 +48,6 @@ No requirements.
 | Name | Description |
 |------|-------------|
 | <a name="output_oauth_client_id"></a> [oauth\_client\_id](#output\_oauth\_client\_id) | n/a |
-| <a name="output_organization"></a> [organization](#output\_organization) | n/a |
 | <a name="output_organization_id"></a> [organization\_id](#output\_organization\_id) | n/a |
+| <a name="output_tfe_workspace_ids"></a> [tfe\_workspace\_ids](#output\_tfe\_workspace\_ids) | n/a |
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->

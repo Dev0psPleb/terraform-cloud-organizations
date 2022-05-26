@@ -1,6 +1,6 @@
 data "tfe_workspace_ids" "all" {
-  organization      = module.organization.tfe_organization_id
-  names             = ["*"]
+  organization = module.organization.tfe_organization_id
+  names        = ["*"]
 }
 
 output "tfe_workspace_ids" {
